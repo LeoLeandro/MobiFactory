@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+	<persistence-unit name="MiAu">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>br.com.powerpet.jpa.entidades.Anamnese</class>
+		<class>br.com.powerpet.jpa.entidades.Anticoncepcional</class>
+		<class>br.com.powerpet.jpa.entidades.Antipulgas</class>
+		<class>br.com.powerpet.jpa.entidades.Diagnostico</class>
+		<class>br.com.powerpet.jpa.entidades.Fornecedor</class>
+		<class>br.com.powerpet.jpa.entidades.Animal</class>
+		<class>br.com.powerpet.jpa.entidades.Hotelzinho</class>
+		<class>br.com.powerpet.jpa.entidades.LaudoClinico</class>
+		<class>br.com.powerpet.jpa.entidades.Medicacao</class>
+		<class>br.com.powerpet.jpa.entidades.Medicamento</class>
+		<class>br.com.powerpet.jpa.entidades.Pessoa</class>
+		<class>br.com.powerpet.jpa.entidades.Receituario</class>
+		<class>br.com.powerpet.jpa.entidades.ProcedimentoClinico</class>
+		<class>br.com.powerpet.jpa.entidades.Usuario</class>
+		<class>br.com.powerpet.jpa.entidades.Banho</class>
+		<class>br.com.powerpet.jpa.entidades.CasoClinico</class>
+		<class>br.com.powerpet.jpa.entidades.Cirurgia</class>
+		<class>br.com.powerpet.jpa.entidades.Cliente</class>
+		<class>br.com.powerpet.jpa.entidades.Endereco</class>
+		<class>br.com.powerpet.jpa.entidades.Exame</class>
+		<class>br.com.powerpet.jpa.entidades.Funcionario</class>
+		<class>br.com.powerpet.jpa.entidades.Evento</class>
+		<class>br.com.powerpet.jpa.entidades.Produto</class>
+		<class>br.com.powerpet.jpa.entidades.RegistroFinanceiro</class>
+		<class>br.com.powerpet.jpa.entidades.Telefone</class>
+		<class>br.com.powerpet.jpa.entidades.Tosa</class>
+		<class>br.com.powerpet.jpa.entidades.Vermifugo</class>
+		<class>br.com.powerpet.jpa.entidades.Vacina</class>
+		
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/MiAu" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="123456" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+		</properties>
+	</persistence-unit>
+</persistence>

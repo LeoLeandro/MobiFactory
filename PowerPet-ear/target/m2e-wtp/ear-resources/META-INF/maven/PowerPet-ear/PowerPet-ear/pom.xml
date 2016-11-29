@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>PowerPet</groupId>
+    <artifactId>PowerPet</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <groupId>PowerPet-ear</groupId>
+  <artifactId>PowerPet-ear</artifactId>
+  <packaging>ear</packaging>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>PowerPet</groupId>
+  		<artifactId>Servidor</artifactId>
+  		<type>ejb</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>PowerPet</groupId>
+  		<artifactId>Fachada</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>PowerPet</groupId>
+  		<artifactId>Persistencia</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>PowerPet</groupId>
+  		<artifactId>Web-Cliente</artifactId>
+  		<type>war</type>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-ear-plugin</artifactId>
+	    <version>2.10.1</version>
+        <!-- configuring the ear plugin -->
+        <configuration>
+          <modules>
+            <webModule>
+              <groupId>PowerPet</groupId>
+              <artifactId>Web-Cliente</artifactId>
+            </webModule>
+            <ejbModule>
+              <groupId>PowerPet</groupId>
+              <artifactId>Servidor</artifactId>
+            </ejbModule>
+            <jarModule>
+              <groupId>PowerPet</groupId>
+              <artifactId>Fachada</artifactId>
+            </jarModule>
+            <jarModule>
+              <groupId>PowerPet</groupId>
+              <artifactId>Persistencia</artifactId>
+            </jarModule>
+          </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

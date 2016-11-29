@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Personalizações do estilo*/
+
+
+.ui-grid-coluna-hubess-1 {
+    width: 2.5%;
+}
+.ui-grid-coluna-hubess-2 {
+    width: 4.5%;
+}
+.ui-grid-coluna-hubess-3 {
+    width: 6%;
+}
+.ui-grid-coluna-hubess-4 {
+    width: 6.5%;
+}
+.ui-grid-coluna-hubess-5 {
+    width: 7.5%;
+}
+.ui-grid-coluna-hubess-6 {
+    width: 10%;
+}
+.ui-grid-coluna-hubess-32 {
+    width: 32%;
+}
+.ui-grid-coluna-botao {
+    width: 3%;
+}
+
+
+.alinhar label{
+    display:block; 
+}
+
+
+.clear {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+.ContainerIndent form .alinhar {
+    display: inline-block;
+    float: left;
+    padding: 10px 10px 0 0;
+    position: relative;
+}
+
+.botoes {
+    clear: both;
+    display: block;
+    height: 26px;
+    width: auto;
+}
+
+.botaoDireita {
+    float: right;
+}
+
+.panelSemBorda{
+	margin-top: 0px !important;
+	border: none;
+	padding: 0 !important;
+}
+
+.PaddingTopPercent7 {
+    padding-top: 7% !important;
+}
+
+.PaddingTopPx10 {
+    padding-top: 10px !important;
+}
+
+#login-logo-p {
+    display: inline-block;
+    line-height: 30px;
+    margin: 18px;
+    padding: 0;
+    width: auto;
+}
+
+#login-logo-p img {
+    height: 50px;
+}
+
+.negrito{
+	font-weight: bold;
+}
+
+.ui-panelgrid-hubess .ui-panelgrid-cell-hubess {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.totalizador {
+    border: 1px solid #e5ebf0;
+    color: white !important;
+    transition: all 0.5s ease 0s;
+}
+
+.popup {
+	width: 60%!important;
+}
+/* Estilo do frame lateral */

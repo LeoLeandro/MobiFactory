@@ -1,0 +1,7 @@
+br\com\powerpet\ejb\autenticacao\AutenticacaoServiceEJB.class
+br\com\powerpet\ejb\validadores\factory\IFactory.class
+br\com\power\pet\ejb\util\TipoEntidade.class
+br\com\powerpet\ejb\validadores\IValidador.class
+br\com\powerpet\ejb\validadores\factory\AbstractValidadorFactory.class
+br\com\powerpet\ejb\validadores\factory\AbstractValidadorFactory$1.class
+br\com\powerpet\ejb\validadores\ValidadorUsuario.class

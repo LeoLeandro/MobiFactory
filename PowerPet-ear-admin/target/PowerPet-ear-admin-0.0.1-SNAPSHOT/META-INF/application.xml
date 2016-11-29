@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+  <display-name>POWERPET-EAR</display-name>
+  <module>
+    <ejb>Servidor-ejb.jar</ejb>
+  </module>
+  <module>
+    <ejb>Persistencia-ejb.jar</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>Web-Admin.war</web-uri>
+      <context-root>/WebAdmin</context-root>
+    </web>
+  </module>
+  <library-directory>lib</library-directory>
+</application>

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.powerpet</groupId>
+	<artifactId>PowerPet</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>PowerPet - Clinica Veterinaria</name>
+
+	<!--  <url>http://www.hubess.com.br</url>-->
+
+	<developers>
+		<developer>
+			<id>leonardo.leandro</id>
+			<name>Leonardo da Silva Leandro</name>
+			<email>leo.leandrocin@gmail.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<jee.version>6.0</jee.version>
+		<hibernate.version>5.0.0.Final</hibernate.version>
+		<jsf.version>2.2.5</jsf.version>
+		<junit-version>4.12</junit-version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<version.org.wildfly>10.0.0.Final</version.org.wildfly>
+		<version.org.wildfly.arquillian>8.1.0.Final</version.org.wildfly.arquillian>
+		<version.arquillian_core>1.1.4.Final</version.arquillian_core>
+		<version.shrinkwrap.resolver>1.0.0-beta-7</version.shrinkwrap.resolver>
+		<gson.version>2.2.4</gson.version>
+		<jax-rs.version>2.0.1</jax-rs.version>
+		<postgresql.version>8.4</postgresql.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>JBoss Repository</id>
+			<url>https://repository.jboss.org/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Modules -->
+			<dependency>
+				<groupId>br.com.powerpet</groupId>
+				<artifactId>Servidor</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>ejb</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.powerpet</groupId>
+				<artifactId>Fachada</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.powerpet</groupId>
+				<artifactId>Persistencia</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>ejb</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.powerpet</groupId>
+				<artifactId>Web-Admin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<type>war</type>
+			</dependency>
+			<!-- Modules -->
+
+			<!-- JEE -->
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${jee.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- JEE -->
+
+			<!-- JPA Persistence Dependencies -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>1.0.1.Final</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- JPA Persistence Dependencies -->
+
+			<!-- DB Dependencies -->
+			<dependency>
+				<groupId>postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
+			<!-- DB Dependencies -->
+
+			<!-- JasperReports -->
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports</artifactId>
+				<version>5.1.0</version>
+			</dependency>
+
+			<!-- Commons -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>4.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.3.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.9.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.10</version>
+			</dependency>
+			<!-- Commons -->
+
+			<dependency>
+				<groupId>com.github.ziplet</groupId>
+				<artifactId>ziplet</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+
+
+			<!-- JAX-RS -->
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>${gson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.reflections</groupId>
+				<artifactId>reflections</artifactId>
+				<version>0.9.10</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.containers.glassfish</groupId>
+				<artifactId>jersey-gf-cdi</artifactId>
+				<version>2.14</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.containers.glassfish</groupId>
+				<artifactId>jersey-gf-cdi-ban-custom-hk2-binding</artifactId>
+				<version>2.14</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.core</groupId>
+				<artifactId>jersey-server</artifactId>
+				<version>2.15</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-json</artifactId>
+				<version>1.19</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.media</groupId>
+				<artifactId>jersey-media-json-jackson</artifactId>
+				<version>2.22.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>1.9.13</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-xc</artifactId>
+				<version>1.9.13</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-jaxrs</artifactId>
+				<version>1.9.13</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.logging</groupId>
+				<artifactId>jboss-logging</artifactId>
+				<version>3.1.4.GA</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- JAX-RS -->
+
+			<!-- Security -->
+			<dependency>
+				<groupId>com.auth0</groupId>
+				<artifactId>java-jwt</artifactId>
+				<version>2.1.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.nimbusds</groupId>
+				<artifactId>nimbus-jose-jwt</artifactId>
+				<version>4.4</version>
+			</dependency>
+			<!-- Security -->
+
+
+			<!-- Cache -->
+			<dependency>
+				<groupId>org.jsr107.ri</groupId>
+				<artifactId>cache-annotations-ri-cdi</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jsr107.ri</groupId>
+				<artifactId>cache-ri-impl</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<!-- Cache -->
+
+			<!-- Test -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-arquillian-container-remote</artifactId>
+				<version>${version.org.wildfly}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>jconsole</artifactId>
+						<groupId>sun.jdk</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>${version.arquillian_core}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.resolver</groupId>
+				<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+				<version>${version.shrinkwrap.resolver}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>log4j</groupId>
+						<artifactId>log4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.resolver</groupId>
+				<artifactId>shrinkwrap-resolver-api-maven</artifactId>
+				<version>${version.shrinkwrap.resolver}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.resolver</groupId>
+				<artifactId>shrinkwrap-resolver-api</artifactId>
+				<version>${version.shrinkwrap.resolver}</version>
+			</dependency>
+			<!-- Test -->
+
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Dependencias comuns a todos os modulos -->
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+		</dependency>
+
+		<!-- GWT -->
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>nimbus-jose-jwt</artifactId>
+		</dependency>
+
+		<!-- Cache Libs -->
+		<dependency>
+			<groupId>org.jsr107.ri</groupId>
+			<artifactId>cache-annotations-ri-cdi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jsr107.ri</groupId>
+			<artifactId>cache-ri-impl</artifactId>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<wtpmanifest>true</wtpmanifest>
+					<wtpapplicationxml>true</wtpapplicationxml>
+					<wtpversion>2.0</wtpversion>
+					<manifest>${basedir}/src/main/webapp/META-INF/MANIFEST.MF</manifest>
+					<jeeversion>${jee.version}</jeeversion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>Servidor</module>
+		<module>Web-Admin</module>
+		<module>Fachada</module>
+		<module>PowerPet-ear</module>
+		<module>PowerPet-ear-admin</module>
+		<module>Web-Cliente</module>
+		<module>Persistencia</module>
+	</modules>
+</project>

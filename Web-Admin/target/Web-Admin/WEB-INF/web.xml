@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app>
+  <display-name>PowerPet</display-name>
+  <servlet>
+    <servlet-name>WebService REST Service</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>br.com.powerpet.webservices</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WebService REST Service</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+
+	<security-constraint>
+		<display-name>PowerPet</display-name>
+		<web-resource-collection>
+			<web-resource-name>WebServices</web-resource-name>
+			<url-pattern>/rest/*</url-pattern>
+			<url-pattern>/autenticacao/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+			<http-method>PUT</http-method>
+			<http-method>DELETE</http-method>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+  	<deny-uncovered-http-methods/>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>javascript-realm</realm-name>
+    </login-config>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+	</session-config>
+</web-app>
